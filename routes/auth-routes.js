@@ -2,13 +2,14 @@ const router = require("express").Router();
 const User = require("./../models/User.model");
 const bcrypt = require("bcryptjs");
 const zxcvbn = require("zxcvbn");
+const isLoggedIn = require("./../middleware/isLoggedIn");
 
 const saltRounds = 10;
 
 //* ROUTES
 
 // GET /signup
-router.get("/signup", (req, res) => {
+router.get("/signup", isLoggedIn, (req, res) => {
     res.render("auth/signup-form");
 })
 

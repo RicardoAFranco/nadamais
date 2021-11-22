@@ -1,5 +1,5 @@
 {
-  "name": "lab-express-basic-auth",
+  "name": "nadamais",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -14,6 +14,7 @@
     "express": "^4.17.1",
     "express-session": "^1.17.2",
     "hbs": "^4.1.1",
+    "ironlauncher": "^0.34.0",
     "mongoose": "^5.12.3",
     "morgan": "^1.10.0",
     "serve-favicon": "^2.5.0",

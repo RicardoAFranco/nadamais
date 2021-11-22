@@ -43,7 +43,7 @@ module.exports = (app) => {
   // Handles access to the favicon
   app.use(favicon(path.join(__dirname, "..", "public", "images", "favicon.ico")));
 
-  const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/02-node-auth";
+  const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/nadamais";
 
   app.use(
     session({

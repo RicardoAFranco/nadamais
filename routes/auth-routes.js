@@ -1,9 +1,8 @@
 const router = require("express").Router();
-const User = require("./../models/User.model");
+const Admin = require("../models/Admin.model");
 const bcrypt = require("bcryptjs");
 const zxcvbn = require("zxcvbn");
 const isLoggedIn = require("./../middleware/isLoggedIn");
-//hello there
 
 const saltRounds = 10;
 
@@ -11,7 +10,7 @@ const saltRounds = 10;
 
 // GET /signup
 router.get("/signup", isLoggedIn, (req, res) => {
-    res.render("auth/signup-form");
+    res.render("auth/signup-form", {loggedInUser: req.session.admin});
 })
 
 // POST /signup
@@ -32,12 +31,12 @@ router.post("/signup", (req, res) => {
     }
     
     // check if the username is not taken
-    User.findOne({ $or: [{username}, {email}] })
-        .then((foundUser) => {
-            if (foundUser) {
-                if (foundUser.username === username) {
+    Admin.findOne({ $or: [{username}, {email}] })
+        .then((foundAdmin) => {
+            if (foundAdmin) {
+                if (foundAdmin.username === username) {
                     throw new Error("This username is already in use");           
-                } else if (foundUser.email === email) {
+                } else if (foundAdmin.email === email) {
                     throw new Error("This email is already registered");
                 }
             }
@@ -49,12 +48,12 @@ router.post("/signup", (req, res) => {
             return bcrypt.hash(password, salt);
         })
         .then((hashedPassword) => {
-            // create new user
-            return User.create({username: username, email: email, password: hashedPassword});
+            // create new admin
+            return Admin.create({username: username, email: email, password: hashedPassword});
         })
-        .then((createdUser) => {
+        .then((createdAdmin) => {
             // redirect to the "/" homepage after successflul signup
-            res.redirect("/secret");
+            res.redirect("/");
         })
         .catch((err) => {
             res.render("auth/signup-form", {errorMessage: err.message || "Error while trying to signup"});
@@ -79,14 +78,14 @@ router.post("/login", (req, res) => {
         return;
     }
 
-    let user;
-    User.findOne({username})
-        .then((foundUser) => {
-            user = foundUser;
-            if (!foundUser) {
+    let admin;
+    Admin.findOne({username})
+        .then((foundAdmin) => {
+            admin = foundAdmin;
+            if (!foundAdmin) {
                 throw new Error("Wrong credentials");
             }
-            return bcrypt.compare(password, foundUser.password);
+            return bcrypt.compare(password, foundAdmin.password);
         })
         .then((isCorrectPassword) => {
             if (!isCorrectPassword) {
@@ -95,8 +94,8 @@ router.post("/login", (req, res) => {
                 // Create the session + cookie and redirect the user
                 // This line triggers the creation of the session in the DB,
                 // and setting of the cookie with session id that will be sent with the response
-                req.session.user = user;
-                res.redirect("/secret");
+                req.session.admin = admin;
+                res.redirect("/");
             }
         })
         .catch((err) => {

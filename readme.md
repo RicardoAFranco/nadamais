@@ -22,13 +22,13 @@ This is a website of an existing company of natural soup. Here you can find 100%
 
 - **sign up** - As a user I want to sign up on the web page so that I can add favorite soaps to my list, suggest new products and review them
 
-- **login** - As a user I want to be able to log in on the web page so that I can get back to my account
+- **login** - As a admin I want to be able to log in on the web page so that I can get back to my account
 
-- **logout** - As a user I want to be able to log out from the web page so that I can make sure no one will access my account
+- **logout** - As a admin I want to be able to log out from the web page so that I can make sure no one will access my account
 
-- **favorite list** - As a user I want to see the list of my favorites and edit and delete them
+- **favorite list** - As a admin I want to see the list of my favorites and edit and delete them
 
-- **edit user** - As a user I want to be able to edit my profile
+- **edit user** - As a admin I want to be able to edit my profile
 
   
 
@@ -65,7 +65,7 @@ This is a website of an existing company of natural soup. Here you can find 100%
 
 
 
-User model
+Admin model
 
 ```javascript
 {

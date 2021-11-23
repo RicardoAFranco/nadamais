@@ -37,8 +37,12 @@ app.use("/", products);
 const authRoutes = require("./routes/auth-routes");
 app.use("/", authRoutes);
 
-const secret = require("./routes/index");
-app.use("/", secret)
+// const secret = require("./routes/index");
+// app.use("/", secret);
+
+const logout = require("./routes/index");
+app.use("/", logout);
+
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require('./error-handling')(app);

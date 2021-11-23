@@ -1,14 +1,20 @@
 const router = require("express").Router();
 const isLoggedIn = require("./../middleware/isLoggedIn");
 
-/* GET home page */
+// GET home page
 router.get("/", (req, res, next) => {
-  res.render("index");
+  res.render("index", {loggedInUser: req.session.admin});
 });
 
+// GET /logout
+// router.get("/", (req, res, next) => {
+//   res.redirect("/logout");
+//   res.render("index");
+// });
+
 // GET /secret
-router.get("/secret", isLoggedIn, (req, res) => {
-  res.render("secret");
+router.get("/", isLoggedIn, (req, res) => {
+    res.render("index");
 })
 
 

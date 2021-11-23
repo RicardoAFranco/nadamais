@@ -15,7 +15,7 @@
     "express-session": "^1.17.2",
     "hbs": "^4.1.1",
     "ironlauncher": "^0.34.0",
-    "mongoose": "^5.12.3",
+    "mongoose": "^5.13.13",
     "morgan": "^1.10.0",
     "serve-favicon": "^2.5.0",
     "zxcvbn": "^4.4.2"

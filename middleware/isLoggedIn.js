@@ -5,10 +5,6 @@ function isLoggedIn(req, res, next) {
     } 
 
     next();
-
-    if (req.session.admin) {
-      return res
-    }
-  }
+}
 
 module.exports = isLoggedIn;

@@ -56,7 +56,7 @@ router.post("/signup", (req, res) => {
             res.redirect("/");
         })
         .catch((err) => {
-            res.render("auth/signup-form", {errorMessage: err.message || "Error while trying to signup"});
+            res.render("auth/signup-form",{errorMessage: err.message || "Error while trying to signup"});
         })
 
 })

@@ -3,12 +3,10 @@ function isLoggedIn(req, res, next) {
     if (!req.session.admin) {
       return res.redirect("/login");
     } 
-
+    // if (req.session.admin) {
+    //   return res.redirect("/logout");
+    // }
     next();
-
-    if (req.session.admin) {
-      return res
-    }
-  }
+}
 
 module.exports = isLoggedIn;

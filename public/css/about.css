@@ -9,7 +9,7 @@
 .section{
 	width: 100%;
 	min-height: 100vh;
-	background-color: #ddd;
+	background-color: rgb(238, 225, 202);
 }
 .container{
 	width: 80%;

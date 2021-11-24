@@ -10,12 +10,10 @@
     <i class="fas fa-lock"></i>
     <input type="password" name="password" placeholder="Password" />
   </div>
+  {{! error message display: }}
+  {{#if errorMessage}}
+    <div class="error-message">{{errorMessage}}</div>
+  {{/if}}
 
   <button type="submit" class="btn">Sign in</button>
 </form>
-
-{{! error message display: }}
-
-{{#if errorMessage}}
-  <div class="error-message">{{errorMessage}}</div>
-{{/if}}

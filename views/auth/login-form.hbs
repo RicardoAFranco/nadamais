@@ -1,18 +1,26 @@
 {{! views/auth/login-form.hbs  }}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/login.css">
+  </head>
+  <body>
+<div class="login-box">
+  <h1>Login</h1>
+  <div class="textbox">
+    <i class="fas fa-user"></i>
+    <input type="text" placeholder="Username">
+  </div>
+  <div class="textbox">
+    <i class="fas fa-lock"></i>
+    <input type="password" placeholder="Password">
+  </div>
 
-<form id="form" action="/login" method="POST">
-
-  <label for="username">Username:</label>
-  <input type="text" name="username" placeholder="Your username" />
-  <br>
-  <label for="password">Password:</label>
-  <input type="password" name="password" placeholder="Your password" />
-  <br>
-  <button type="submit">Login</button>
-</form>
+  <input type="button" class="btn" value="Sign in">
+</div>
+  </body>
+</html>
 
 {{! error message display: }}
-
-{{#if errorMessage}}
-  <div class="error-message">{{errorMessage}}</div>
-{{/if}}

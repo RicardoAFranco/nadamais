@@ -28,58 +28,5 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css"/>
     <link rel="stylesheet" href="css/style.css"/>
 
-    <!-- Header section -->
-    <header class="header-section">
-      <nav class="main-navbar">
-        <div class="container d-flex">
-          <div class="logo">
-            <a href="/" class="title">Nada+</a>
-          </div>
-          <div style="flex: 1" class="pt-2 nav-logo-container"></div>
-          <div class="mobile-nav-padding"></div>
-          <ul class="main-menu">
-            {{#if loggedInUser}}
-              <li><a href="/about">About Us</a></li>
-              <li><a href="/products">Products</a></li>
-              <li><a href="/signup">Add a new admin</a></li>
-              <li><a href="/logout">Log out</a></li>
-            {{else}}
-              <li><a href="/about">About Us</a></li>
-              <li><a href="/products">Products</a></li>
-              {{!-- <li><a href="/signup">Add a new admin</a></li> --}}
-              <li><a href="/login">Log in</a></li>
-            {{/if}}
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <!-- Header section end -->
 
       {{{body}}}
-
-      <!-- Footer section -->
-    <section class="footer-section">
-      <div class="social-links-warp">
-        <div class="container text-center">
-          <div class="social-links">
-            <a href="https://www.instagram.com/_nada.mais_/" target="_blank" class="instagram"><i class="fa fa-instagram"></i><span>instagram</span></a>
-            <a href="https://www.facebook.com/nada.maisss" target="_blank" class="facebook"><i class="fa fa-facebook"></i><span>facebook</span></a>
-          </div>
-
-        </div>
-      </div>
-    </section>
-    <!-- Footer section end -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.slicknav.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.nicescroll.min.js"></script>
-    <script src="js/jquery.zoom.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/main.js"></script>
-
-    <script src="/js/script.js"></script>
-  </body>
-
-</html>

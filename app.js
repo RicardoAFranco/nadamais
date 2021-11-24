@@ -31,6 +31,9 @@ app.use('/', index);
 const about = require("./routes/about");
 app.use("/", about);
 
+const contacts = require("./routes/contacts");
+app.use("/", contacts);
+
 const products = require("./routes/products");
 app.use("/", products);
 

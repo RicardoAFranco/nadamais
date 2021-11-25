@@ -1,10 +1,15 @@
-<h1>Soaps</h1>
+<h1>Products</h1>
 {{#each soapsList}}
     <div>
         <p><a href="product-detail/{{_id}}">{{name}}</a> </p>
         <p> {{price}} </p>
-        <a href="">edit</a>
-    </div>
-{{/each}}
 
+        {{#if loggedInUser}}
+            <a href="">edit</a>
+        {{/if}}
+        
+{{/each}}
+{{#if loggedInUser}}
 <a href="new-product">Add new Soap</a>
+{{/if}}
+    </div>

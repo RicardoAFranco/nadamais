@@ -1,13 +1,121 @@
 .title{
 	font-size: 40px;
-	color: #2f5343;
+	color: #402f53;
 	font-weight: bold;	
 }
 
 .title:hover {
-	color: #d7c3da;
+	color: #8f6d94;
+}
+/* about css start section */
+.sections{
+	width: 100%;
+	min-height: 100vh;
+	background-color: rgb(245, 244, 237);
+}
+.containers{
+	width: 80%;
+	display: block;
+	margin:auto;
+	padding-top: 90px;
+}
+.content-sections{
+	float: left;
+	width: 55%;
+}
+.image-sections{
+	float: right;
+	width: 40%;
+}
+.image-sections img{
+	width: 100%;
+	height: auto;
+	border-radius: 10%;
+}
+.content-sections .title{
+	color: #21422f;
+	text-transform: uppercase;
+	font-size: 20px;
+}
+.content-sections .contents h3{
+	margin-top: 40px;
+	color:#464242;
+	font-size: 17px;
+}
+.content-sections .contents p{
+	margin-top: 10px;
+	font-family: sans-serif;
+	font-size: 18px;
+	line-height: 1.5;
+}
+.content-sections .contents .buttons{
+	margin-top: 70px;
+}
+.content-sections .contents .buttons a{
+	background-color: #3d3d3d;
+	padding:12px 40px;
+	text-decoration: none;
+	color:rgb(218, 210, 210);
+	font-size: 25px;
+	letter-spacing: 1.5px;
+}
+.content-sections .contents .buttons a:hover{
+	background-color: #2e5f5b;
+	color:#fff;
+}
+.content-sections .socials{
+	margin: 40px 40px;
+}
+.content-sections .socials i{
+	color:#1f3952;
+	font-size: 30px;
+	padding:0px 10px;
+}
+.content-sections .socials i:hover{
+	color:#3a796e;
+}
+@media screen and (max-width: 768px){
+	.containers{
+	width: 80%;
+	display: block;
+	margin:auto;
+	padding-top:50px;
+}
+.content-sections{
+	float:none;
+	width:100%;
+	display: block;
+	margin:auto;
+}
+.image-sections{
+	float:none;
+	width:100%;
+	
+}
+.image-sections img{
+	width: 100%;
+	height: auto;
+	display: block;
+	margin:auto;
+}
+.content-sections .title{
+	text-align: center;
+	font-size: 19px;
+}
+.content-sections .contents .buttons{
+	text-align: center;
+}
+.content-sections .contents .buttons a{
+	padding:9px 30px;
+}
+.content-sections .socials{
+	text-align: center;
 }
 
+}
+
+
+/* css about section end */
 
 
 span{
@@ -29,7 +137,7 @@ h4,
 h5,
 h6 {
 	margin: 0;
-	color: #275848;
+	color: #22173d;
 	font-weight: 600;
 }
 
@@ -157,9 +265,9 @@ ol {
 
 /* TOP SECTION NAV*/
 .main-navbar {
-	background: #ddd;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	background: rgb(219, 219, 214);
+	padding-top: 13px;
+	padding-bottom: 13px;
 }
 
 .slicknav_menu {
@@ -178,7 +286,7 @@ ol {
 .main-menu li a {
 	display: inline-block;
 	font-size: 20px;
-	color: #356152;
+	color: #231d49;
 	margin-right: 40px;
 	line-height: 1;
 	padding-top: 20px;
@@ -194,7 +302,7 @@ ol {
 }
 
 .main-menu li:hover>a {
-	color: #d7c3da;
+	color: #8f6d94;
 }
 
 .main-menu .sub-menu li {

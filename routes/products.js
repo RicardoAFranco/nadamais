@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const Soap = require("../models/Soap.model");
+const fileUploader = require('../config/cloudinary.config');
 
 // GET products page
 router.get("/products", (req, res) => {
@@ -27,15 +28,15 @@ router.get("/new-product", (req, res) => {
   res.render("products/new-product", {loggedInUser: req.session.admin});
 })
 
-router.post("/new-product", (req, res) => {
+router.post("/new-product", fileUploader.single("image"), (req, res) => {
   const {name, description, durability, weight, price} = req.body;
-  Soap.create({name, description, durability, weight, price})
-  .then((createdSoap) => {
-    res.redirect("products");
-  })
-  .catch((err) => {
-    res.redirect("products/new-product");
-  })
+  Soap.create({name, description, durability, weight, price, imageUrl: req.file.path})
+    .then((createdSoap) => {
+      res.redirect("products");
+    })
+    .catch((err) => {
+      res.redirect("products/new-product");
+    })
 })
 
 

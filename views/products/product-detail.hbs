@@ -1,6 +1,7 @@
 <h1>Soap detail</h1>
 {{#each soapDetail}}
     <div>
+        <img src="{{imageUrl}}" />
         <p> {{name}} </p>
         <p> {{description}} </p>
         <p> {{durability}} </p>
@@ -8,3 +9,8 @@
         <p> {{price}} </p>
     </div>
 {{/each}}
+
+{{#if loggedInUser}}
+    <a href="">edit</a>
+    <a href="products">delete</a>
+{{/if}}

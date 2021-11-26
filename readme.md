@@ -106,13 +106,13 @@ https://miro.com/app/board/o9J_liYQqSQ=/
 
 ### Git
 
- Repository - https://github.com/PauloFerreira753/Nada.git
+ Repository - https://github.com/RicardoAFranco/nadamais.git
 
 
 
 ### Slides
 
-The url to your presentation slides
+https://docs.google.com/presentation/d/1Eakm4lrC-GHtMiFhYx1cUZnJbhGdapMuVA4Ps2JQwe0/edit#slide=id.gfc97472056_0_0
 
 [Slides Link](https://docs.google.com/presentation/d/1P5FIi0vHZBUcgUtmt1M4_lLCO5dwdJ4UOgtJa4ehGfk/edit?usp=sharing)
 

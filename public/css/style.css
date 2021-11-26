@@ -143,6 +143,7 @@ h6 {
 
 h1 {
 	font-size: 70px;
+	color: rgb(79, 32, 83);
 }
 
 h2 {
@@ -163,12 +164,6 @@ h5 {
 
 h6 {
 	font-size: 16px;
-}
-
-p {
-	font-size: 19px;
-	color: #585858;
-	line-height: 1.6;
 }
 
 img {
@@ -302,7 +297,7 @@ ol {
 }
 
 .main-menu li:hover>a {
-	color: #8f6d94;
+	color: rgb(155, 100, 160);
 }
 
 .main-menu .sub-menu li {
@@ -649,9 +644,44 @@ ol {
 /*
 .produtos
 */
+.detail-title{
+	margin-top: 2%;
+   align-items: center;
+   margin-left: 20%;
+   font-size: 60px;
+   margin-bottom: 2%;
+   color: rgb(155, 100, 160);
+   
+}
 
+.containers-small{
 
+	margin-left:15vw;
+	width: 60vw;
+	height: 60vh;
+	display:flex;
+	justify-content: center;
+	text-align: justify;
+}
+.containers-small-text{
+	width: 20vw;
+	padding-left: 2vw;
+}
 
+.details-img{
+	height:50vh;
+}
+
+.containers-edit{
+	margin-left: 40vw;
+	
+}
+
+#editDelete{
+	font-size: 20px;
+	color: rgb(79, 32, 83);
+	
+}
 /* ----------------
   Footer section
 ---------------------*/
@@ -710,7 +740,7 @@ ol {
 }
 
 .social-links a:hover span {
-	color: #fff;
+	color: rgb(79, 32, 83);
 }
 
 
@@ -954,3 +984,4 @@ ol {
 		display: none;
 	}
 }
+

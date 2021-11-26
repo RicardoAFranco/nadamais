@@ -1,12 +1,24 @@
-<h1>Products</h1>
+
+    
+<link rel="stylesheet" href="css/products.css">
+
+<h1>Produtos</h1>
+
+    <div class="container-box-product">
 {{#each soapsList}}
-    <div>
-        <img src="{{imageUrl}}">
-        <p><a href="product-detail/{{_id}}">{{name}}</a> </p>
-        <p> {{price}} </p>
-    </div>
+
+        <div class="containers-small-product">
+        <img src="{{imageUrl}}" class="imgpic" > 
+        <div class="text">
+                <p><a href="product-detail/{{_id}}">{{name}}</a> </p>
+                <p> {{price}} </p>
+        </div>
+        </div>
+        
 {{/each}}
+    </div>
 
 {{#if loggedInUser}}
-    <a href="new-product">Add new Soap</a>
+    <a class="buttons" href="new-product"> Add new Soap</a>
 {{/if}}
+

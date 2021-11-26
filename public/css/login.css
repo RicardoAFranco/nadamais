@@ -1,9 +1,8 @@
-
 body{
   margin: 0;
   padding: 0;
   background: url(../img/k8.jpg) no-repeat;
-  background-size: cover;
+  
 }
 .login-box{
   width: 280px;
@@ -12,9 +11,10 @@ body{
   left: 0%;
   transform: translate(-50%,-50%);
   color: rgb(255, 255, 255);
+  margin-left: 50%;
 }
 .login-box h1{
-  float: left;
+  float: ri;
   font-size: 40px;
   border-bottom: 6px solid #f7f7f7;
   margin-bottom: 50px;
@@ -54,6 +54,6 @@ body{
   margin: 12px 0;
 }
 .btn:hover {
-	box-shadow: 2px 2px 5px #555;
-	background-color: #2d686d;
+    box-shadow: 2px 2px 5px #555;
+    background-color: rgb(100, 42, 105);
 }

@@ -1,16 +1,26 @@
-<h1>Soap detail</h1>
-{{#each soapDetail}}
-    <div>
-        <img src="{{imageUrl}}" />
-        <p> {{name}} </p>
-        <p> {{description}} </p>
-        <p> {{durability}} </p>
-        <p> {{weight}} </p>
-        <p> {{price}} </p>
-    </div>
-{{/each}}
+{{!-- <link rel="stylesheet" href="../../public/css/product-details.css"> --}}
+<h1 class="detail-title">Detalhes</h1>
+
+<div class="container-box">
+    <div class="containers-small">
+
+        <img class="details-img" src="{{this.soapDetail.imageUrl}}" />
+        <div class="containers-small-text">
+             <h5> {{this.soapDetail.name}} </h5> <br>
+           <p> {{this.soapDetail.description}} </p>
+           <p> {{this.soapDetail.weight}} </p>
+           <p> {{this.soapDetail.price}} </p>
+        </div>
+         
+</div>
 
 {{#if loggedInUser}}
-    <a href="">edit</a>
-    <a href="products">delete</a>
+<div class="containers-edit">
+    <a href="/edit-product/{{soapDetail.id}}"> edit</a>
+    <a href="/edit-product/{{soapDetail.id}}/delete">delete</a>
+    </div>
 {{/if}}
+
+</div>
+
+

@@ -1,26 +1,26 @@
-{{!-- <link rel="stylesheet" href="../../public/css/product-details.css"> --}}
+{{! <link rel="stylesheet" href="../../public/css/product-details.css"> }}
 <h1 class="detail-title">Detalhes</h1>
 
 <div class="container-box">
-    <div class="containers-small">
+  <div class="containers-small">
 
-        <img class="details-img" src="{{this.soapDetail.imageUrl}}" />
-        <div class="containers-small-text">
-             <h5> {{this.soapDetail.name}} </h5> <br>
-           <p> {{this.soapDetail.description}} </p>
-           <p> {{this.soapDetail.weight}} </p>
-           <p> {{this.soapDetail.price}} </p>
-        </div>
-         
-</div>
-
-{{#if loggedInUser}}
-<div class="containers-edit">
-    <a href="/edit-product/{{soapDetail.id}}"> edit</a>
-    <a href="/edit-product/{{soapDetail.id}}/delete">delete</a>
+    <img class="details-img" src="{{this.soapDetail.imageUrl}}" />
+    <div class="containers-small-text">
+      <h5> {{this.soapDetail.name}} </h5>
+      <br />
+      <p> {{this.soapDetail.description}} </p>
+      <p> Durabilidade: {{this.soapDetail.durability}} </p>
+      <p> Peso: {{this.soapDetail.weight}} </p>
+      <p> Preço: {{this.soapDetail.price}} </p>
     </div>
-{{/if}}
+
+  </div>
+
+  {{#if loggedInUser}}
+    <div class="containers-edit">
+      <a id="editDelete" href="/edit-product/{{soapDetail.id}}">Editar  -</a>
+      <a id="editDelete" href="/edit-product/{{soapDetail.id}}/delete">Eliminar</a>
+    </div>
+  {{/if}}
 
 </div>
-
-

@@ -55,5 +55,6 @@ body{
 }
 .btn:hover {
     box-shadow: 2px 2px 5px #555;
-    background-color: rgb(100, 42, 105);
+    background-color: #7e428d;
+    ;
 }

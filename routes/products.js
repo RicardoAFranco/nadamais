@@ -6,7 +6,7 @@ const fileUploader = require('../config/cloudinary.config');
 router.get("/products", (req, res) => {
   Soap.find()
     .then((retrievedSoaps) => {
-      res.render("products/products", {loggedInUser: req.session.admin, soapsList: retrievedSoaps});
+      res.render("products/products", { loggedInUser: req.session.admin, soapsList: retrievedSoaps });
     })
     .catch((err) => {
       console.log(err);
@@ -17,7 +17,7 @@ router.get("/product-detail/:soapId", (req, res) => {
   const mySoapId = req.params.soapId;
   Soap.findById(mySoapId)
     .then((retrievedSoap) => {
-      res.render("products/product-detail", {loggedInUser: req.session.admin, soapDetail: retrievedSoap});
+      res.render("products/product-detail", { loggedInUser: req.session.admin, soapDetail: retrievedSoap });
     })
     .catch((err) => {
       console.log(err);
@@ -25,12 +25,12 @@ router.get("/product-detail/:soapId", (req, res) => {
 })
 
 router.get("/new-product", (req, res) => {
-  res.render("products/new-product", {loggedInUser: req.session.admin});
+  res.render("products/new-product", { loggedInUser: req.session.admin });
 })
 
 router.post("/new-product", fileUploader.single("image"), (req, res) => {
-  const {name, description, durability, weight, price} = req.body;
-  Soap.create({name, description, durability, weight, price, imageUrl: req.file.path})
+  const { name, description, durability, weight, price } = req.body;
+  Soap.create({ name, description, durability, weight, price, imageUrl: req.file.path })
     .then((createdSoap) => {
       res.redirect("/products");
     })
@@ -45,7 +45,7 @@ router.get("/edit-product/:id", (req, res) => {
   const { id } = req.params;
   Soap.findById(id)
     .then((soapToEdit) => {
-      res.render("products/edit-product", {loggedInUser: req.session.admin, soapToEdit: soapToEdit})
+      res.render("products/edit-product", { loggedInUser: req.session.admin, soapToEdit: soapToEdit })
     })
     .catch((err) => console.log(err));
 });
@@ -56,15 +56,25 @@ router.post("/edit-product/:id", fileUploader.single("image"), (req, res) => {
   const { name, description, durability, weight, price } = req.body;
 
   let imageUrl;
-  if (req.file) {
-    imageUrl = req.file.path;
-  } else {
-    imageUrl = existingImage;
-  }
+  Soap.findById(id)
+    .then((mySoap) => {
 
-  Soap.findByIdAndUpdate(id, { name, description, durability, weight, price, imageUrl }, { new: true })
-    .then(() => res.redirect(`/product-detail/${id}`))
+      if (req.file) {
+        imageUrl = req.file.path;
+      } else {
+        imageUrl = mySoap.imageUrl
+      }
+
+    })
+    .then(() => {
+      Soap.findByIdAndUpdate(id, { name, description, durability, weight, price, imageUrl }, { new: true })
+        .then(() => res.redirect(`/product-detail/${id}`))
+
+
+    })
     .catch((err) => console.log(err));
+
+
 });
 
 // GET / route for delete product

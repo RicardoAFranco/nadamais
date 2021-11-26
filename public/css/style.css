@@ -8,6 +8,10 @@
 	color: #8f6d94;
 }
 /* about css start section */
+.sobre {
+	font-size: 30px;
+}
+
 .sections{
 	width: 100%;
 	min-height: 100vh;

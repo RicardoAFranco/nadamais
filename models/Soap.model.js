@@ -7,8 +7,8 @@ const soapSchema = new Schema(
   name: { type: String, unique: true, required: true },
   description: String,
   durability: String,
-  weight: Number,
-  price: Number
+  weight: String,
+  price: String
   },
   {
     timestamps: true

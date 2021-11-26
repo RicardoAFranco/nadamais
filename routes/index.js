@@ -7,10 +7,4 @@ router.get("/", (req, res, next) => {
 });
 
 
-// GET /secret
-// router.get("/", isLoggedIn, (req, res) => {
-//     res.render("index");
-// })
-
-
 module.exports = router;

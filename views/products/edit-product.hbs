@@ -1,0 +1,43 @@
+
+<link rel="stylesheet" href="./../css/addNew.css">
+<form action="/edit-product/{{soapToEdit._id}}" method="POST" enctype="multipart/form-data">
+<div class="wrapper">
+    <div class="title">
+      Editar Sabão
+    </div>
+    <div class="form">
+       <div class="inputfield">
+          <label>Nome</label>
+          <input type="text" class="input" name="name" value="{{soapToEdit.name}}">
+       </div>  
+      <div class="inputfield">
+          <label>Descrição</label>
+          <textarea class="textarea" name= "description"/>{{soapToEdit.description}}"</textarea>
+       </div> 
+       <div class="inputfield">
+          <label>Durabilidade</label>
+          <input type="text" class="input" name= "durability" value="{{soapToEdit.durability}}"/>
+       </div>  
+      <div class="inputfield">
+          <label>Peso</label>
+          <input type="text" class="input" name= "weight" value="{{soapToEdit.weight}}">
+       </div> 
+
+        <div class="inputfield">
+          <label>Preço</label>
+          <input type="text" class="input" name= "price" value="{{soapToEdit.price}}">
+       </div> 
+    <label>Imagem:</label>
+    <input type="file" name="image" />
+      <div class="inputfield">
+        
+        <button type= "submit" class="btn">Submeter</button>
+      </div>
+    </div>
+</div>	
+</form>
+
+  {{! error message display: }}
+  {{#if errorMessage}}
+    <div class="error-message">{{errorMessage}}</div>
+  {{/if}}

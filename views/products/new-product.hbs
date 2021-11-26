@@ -1,0 +1,43 @@
+
+<link rel="stylesheet" href="css/addNew.css">
+<form action="/new-product" method="POST" enctype="multipart/form-data">
+<div class="wrapper">
+    <div class="title">
+      Adicionar Sabão
+    </div>
+    <div class="form">
+       <div class="inputfield">
+          <label>Nome</label>
+          <input type="text" class="input" name= "name">
+       </div>  
+      <div class="inputfield">
+          <label>Descrição</label>
+          <textarea class="textarea" name= "description" ></textarea>
+       </div> 
+       <div class="inputfield">
+          <label>Durabilidade</label>
+          <input type="text" class="input" name= "durability"/>
+       </div>  
+      <div class="inputfield">
+          <label>Peso</label>
+          <input type="text" class="input" name= "weight">
+       </div> 
+
+        <div class="inputfield">
+          <label>Preço</label>
+          <input type="text" class="input" name= "price">
+       </div> 
+    <label>Imagem:</label>
+    <input type="file" name="image" />
+      <div class="inputfield">
+        
+        <button type= "submit" value="Adicionar Sabão" class="btn"> Adicionar</button>
+      </div>
+    </div>
+</div>	
+</form>
+
+  {{! error message display: }}
+  {{#if errorMessage}}
+    <div class="error-message">{{errorMessage}}</div>
+  {{/if}}

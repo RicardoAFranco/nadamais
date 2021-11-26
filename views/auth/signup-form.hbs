@@ -1,21 +1,24 @@
 {{! views/auth/signup-form.hbs  }}
 
-<form id="form" action="/signup" method="POST">
+<link rel="stylesheet" href="css/newAdmin.css">
+<form class="login-box" action="/signup" method="POST">
+  <h1>Criar administrador</h1>
+  <div class="textbox">
+    <i class="fas fa-user"></i>
+    <input type="text" name="username" placeholder="create a username" />
+  </div>
+  <div class="textbox">
+    <i class="fas fa-lock"></i>
+    <input type="email" name="email" placeholder="Enter e-mail" />
+  </div>
+  <div class="textbox">
+    <i class="fas fa-lock"></i>
+    <input type="password" name="password" placeholder="create a password" />
+  </div>
+  {{! error message display: }}
+  {{#if errorMessage}}
+    <div class="error-message">{{errorMessage}}</div>
+  {{/if}}
 
-  <label for="username">Username:</label>
-  <input type="text" name="username" placeholder="Create a username" />
-  <br>
-  <label for="email">E-mail:</label>
-  <input type="email" name="email" placeholder="Your e-mail" />
-  <br>
-  <label for="password">Password:</label>
-  <input type="password" name="password" placeholder="Create a password" />
-  <br>
-  <button type="submit">Create account</button>
+  <button type="submit" class="btn">Criar</button>
 </form>
-
-{{! error message display: }}
-
-{{#if errorMessage}}
-  <div class="error-message">{{errorMessage}}</div>
-{{/if}}

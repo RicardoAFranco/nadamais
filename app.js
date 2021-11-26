@@ -31,17 +31,14 @@ app.use('/', index);
 const about = require("./routes/about");
 app.use("/", about);
 
+const contacts = require("./routes/contacts");
+app.use("/", contacts);
+
 const products = require("./routes/products");
-app.use("/", products);
+app.use("/", products); 
 
 const authRoutes = require("./routes/auth-routes");
 app.use("/", authRoutes);
-
-// const secret = require("./routes/index");
-// app.use("/", secret);
-
-const logout = require("./routes/index");
-app.use("/", logout);
 
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
